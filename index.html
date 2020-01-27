@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>display clock</title>
+	<style type="text/css">
+		#clock{
+           width: 900px;
+            margin: 150px;
+          
+           font-size: 150px;
+          
+
+		}
+		form{
+			background-color:cyan;
+			width: 1000px;
+			margin:0 auto 0 auto 0;
+		}
+		h1{
+			color: darkred;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>"How ever night is long the dawn will break"</h1>
+	<form>
+
+<div id="clock"></div>
+
+<script type="text/javascript">
+
+	setInterval(displayclock);
+
+	function displayclock() {
+
+		var time = new Date();
+		var hrs =  time.getHours();
+		var min = time.getMinutes();
+		var sec = time.getSeconds();
+		var en = 'AM';
+
+		if (hrs > 12) {
+			en = 'PM';
+		}
+
+if (hrs > 12) {
+	hrs= hrs - 12;
+}
+if (hrs == 0) {
+	hrs = 12;
+}
+if (hrs < 10) {
+	hrs = 'o' + hrs;
+}
+
+if (min < 10) {
+	min = 'o' + min;
+}
+if (min < 10) {
+	min = 'o' + min;
+}
+document.getElementById('clock').innerHTML = hrs +":" +min+":" +sec +   '' +   en;
+
+	}
+</script>
+</form>
+</body>
+</html>
